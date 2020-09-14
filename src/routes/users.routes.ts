@@ -1,4 +1,5 @@
 import {Router} from 'express';
+import User from '../models/Users';
 import createUserService from '../services/CreateUserService';
 
 const usersRouter = Router();
@@ -15,6 +16,8 @@ usersRouter.post('/', async (request, response)=>{
       password,
     });
 
+    user.password = "";
+    
     return response.json(user);
   } catch(err){
     return response.status(400).json({ error: err.message});
@@ -22,3 +25,7 @@ usersRouter.post('/', async (request, response)=>{
 });
 
 export default usersRouter;
+
+function newFunction(user: User) {
+  return user["password"];
+}
