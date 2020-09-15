@@ -25,7 +25,3 @@ usersRouter.post('/', async (request, response)=>{
 });
 
 export default usersRouter;
-
-function newFunction(user: User) {
-  return user["password"];
-}
