@@ -15,9 +15,9 @@ sessionsRouter.post('/', async (request, response)=>{
       password,
     });
 
-    const mappedUser = UserMap.toDTO(user);
+   // const mappedUser = UserMap.toDTO(user);
     
-    return response.json({ mappedUser, token } );
+    return response.json({ user, token } );
 });
 
 export default sessionsRouter;
