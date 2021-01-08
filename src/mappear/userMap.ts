@@ -1,4 +1,4 @@
-import User from '../models/Users';
+import User from '@modules/users/infra/typeorm/entities/Users';
 
 export default class UserMap {
   public static toDTO(user: User) {
