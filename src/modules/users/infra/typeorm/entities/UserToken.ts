@@ -1,0 +1,31 @@
+import {
+  Entity, 
+  Column, 
+  PrimaryGeneratedColumn, 
+  CreateDateColumn, 
+  UpdateDateColumn,
+  Generated,
+} from 'typeorm';
+import { uuid } from 'uuidv4';
+
+@Entity('user_tokens')
+class UserToken{
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column()
+  @Generated('uuid')
+  token: string;
+
+  @Column()
+  user_id: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  update_at: Date;
+  
+}
+
+export default UserToken;
